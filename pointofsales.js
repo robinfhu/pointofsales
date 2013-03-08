@@ -79,6 +79,7 @@ CheckoutTerminal.prototype.calculateTotal = function() {
 	return totalCost;
 };
 
+/******************  Begin Testing ********************/
 var terminal = new CheckoutTerminal();
 terminal.setPricing({
 	"A": {price: 2, bulkUnit: 4, bulkPrice: 7},
@@ -91,6 +92,8 @@ var unitTests = [
 	{items: "ABCDABAA", expectedTotal: 32.40},
 	{items: "CCCCCCC", expectedTotal: 7.25},
 	{items: "ABCD", expectedTotal: 15.40},
+	{items: "", expectedTotal: 0},
+	{items: "AAAAAAAAD", expectedTotal: 14.15} 
 ];
 
 for(var i = 0; i < unitTests.length; ++i) {
